@@ -25,10 +25,6 @@ public class SpaceShip {
         return this.cargoSpace;
     }
 
-
-
-
-
     public SpaceShip() {
     }
 
