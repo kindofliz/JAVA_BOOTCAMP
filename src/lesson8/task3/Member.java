@@ -9,6 +9,7 @@ public class Member {
     private double salary;
 
     public void printSalary() {
+
         System.out.println("This member earns: " + salary);
     }
 

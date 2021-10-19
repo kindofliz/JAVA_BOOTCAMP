@@ -9,34 +9,20 @@ public class MainApp {
         PracticeParent parent = new PracticeParent();
         PracticeChild child = new PracticeChild();
 
-        System.out.println("1 - method of parent class by object of parent class: ");
+        //1 - method of parent class by object of parent class:
         parent.printParentInfo();
-        System.out.println("2 - method of child class by object of child class: ");
+        //2 - method of child class by object of child class:
         child.printChildInfo();
 
-        System.out.println("3 - method of parent class by object of child class: ");
+        //3 - method of parent class by object of child class:
         child.printParentInfo();
 
+        //Task 2
+        //If the parent method is changed to private, it's impossible to call from main class
+
 
 
 
     }
-
-    public static class PracticeParent {
-
-        //for task 2 change public to private
-        public void printParentInfo() {
-            System.out.println("This is parent class!");
-        }
-    }
-
-
-    public static class PracticeChild extends PracticeParent {
-
-        public void printChildInfo() {
-            System.out.println("This is child class!");
-        }
-    }
-
 
 }
