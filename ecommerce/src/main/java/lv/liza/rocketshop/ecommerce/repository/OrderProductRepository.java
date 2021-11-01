@@ -1,8 +1,6 @@
 package lv.liza.rocketshop.ecommerce.repository;
 
-
 import org.springframework.data.repository.CrudRepository;
 
-public interface ProductRepository extends CrudRepository<Product, Long> {
+public interface OrderProductRepository extends CrudRepository<OrderProduct, OrderProductPK> {
 }
-
