@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JAVA_BOOTCAMP.iml" filepath="$PROJECT_DIR$/JAVA_BOOTCAMP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ecommerce/ecommerce.iml" filepath="$PROJECT_DIR$/ecommerce/ecommerce.iml" />
       <module fileurl="file://$PROJECT_DIR$/../portfolio/portfolio.iml" filepath="$PROJECT_DIR$/../portfolio/portfolio.iml" />
       <module fileurl="file://$PROJECT_DIR$/../test-project/test-project.iml" filepath="$PROJECT_DIR$/../test-project/test-project.iml" />
     </modules>
