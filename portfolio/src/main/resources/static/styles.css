@@ -1,0 +1,49 @@
+body {
+    color: black;
+}
+div {
+    font-size: 10;
+}
+
+
+h1 {
+    font-size: 20;
+}
+
+h3 {
+    font-size: 10;
+}
+
+
+i {
+    color: purple;
+}
+
+a {
+    position: right;
+}
+
+#unique-element {
+    background-color: pink;
+}
+
+.third-class {
+    color: orange;
+    font-size: 40;
+    background: black;
+}
+
+#right{
+  position: absolute;
+      right: 0;
+      top: 0;
+      display: block;
+}
+
+.sgt {
+    float: left;
+}
+
+.social {
+    float: right;
+}
