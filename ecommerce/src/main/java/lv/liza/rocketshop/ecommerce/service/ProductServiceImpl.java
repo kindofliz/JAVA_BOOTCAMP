@@ -9,7 +9,7 @@ import javax.transaction.Transactional;
 
 @Service
 @Transactional
-public class ProductServiceImpl implements ProductService  {
+public class ProductServiceImpl implements ProductService {
 
     // productRepository constructor injection
     @Autowired
@@ -18,7 +18,6 @@ public class ProductServiceImpl implements ProductService  {
     @Override
     public Iterable<Product> getAllProducts() {
         return productRepository.findAll();
-
     }
 
     @Override
@@ -31,7 +30,14 @@ public class ProductServiceImpl implements ProductService  {
     @Override
     public Product save(Product product) {
         return productRepository.save(product);
+    }
 
+    public ProductRepository getProductRepository() {
+        return productRepository;
+    }
+
+    public void setProductRepository(ProductRepository productRepository) {
+        this.productRepository = productRepository;
     }
 }
 

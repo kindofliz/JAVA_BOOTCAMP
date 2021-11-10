@@ -33,9 +33,9 @@ export class EcommerceComponent implements OnInit {
     }
 
     reset() {
-        // this.orderFinished = false;
-        // this.productsC.reset();
-        // this.shoppingCartC.reset();
-        // this.ordersC.paid = false;
+        this.orderFinished = false;
+        this.productsC.reset();
+        this.shoppingCartC.reset();
+        this.ordersC.paid = false;
     }
 }

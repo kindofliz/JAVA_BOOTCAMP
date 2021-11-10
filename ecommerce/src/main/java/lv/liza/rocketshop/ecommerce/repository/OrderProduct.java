@@ -19,11 +19,8 @@ public class OrderProduct {
     private Integer quantity;
 
     // default constructor
-
-
     public OrderProduct() {
     }
-
 
     public OrderProduct(Order order, Product product, Integer quantity) {
         pk = new OrderProductPK();
@@ -60,8 +57,8 @@ public class OrderProduct {
         this.quantity = quantity;
     }
 
-
     // hashcode() and equals() methods
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

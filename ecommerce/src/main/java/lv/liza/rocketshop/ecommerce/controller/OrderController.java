@@ -39,10 +39,8 @@ public class OrderController {
         return this.orderService.getAllOrders();
     }
 
-
-
     @PostMapping
-    public ResponseEntity<Order> create(@RequestBody OrderForm form) {
+    public ResponseEntity<Order> create(@RequestBody OrderForm form) throws Exception {
         List<OrderProductDto> formDtos = form.getProductOrders();
         validateProductsExistence(formDtos);
         Order order = new Order();
@@ -51,13 +49,9 @@ public class OrderController {
 
         List<OrderProduct> orderProducts = new ArrayList<>();
         for (OrderProductDto dto : formDtos) {
-            try {
-                orderProducts.add(orderProductService.create(new OrderProduct(order, productService.getProduct(dto
-                        .getProduct()
-                        .getId()), dto.getQuantity())));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            orderProducts.add(orderProductService.create(new OrderProduct(order, productService.getProduct(dto
+                    .getProduct()
+                    .getId()), dto.getQuantity())));
         }
 
         order.setOrderProducts(orderProducts);
@@ -75,7 +69,7 @@ public class OrderController {
         return new ResponseEntity<>(order, headers, HttpStatus.CREATED);
     }
 
-    private void validateProductsExistence(List<OrderProductDto> orderProducts) {
+    private void validateProductsExistence(List<OrderProductDto> orderProducts)  {
         try {
             List<OrderProductDto> list = orderProducts
                     .stream()

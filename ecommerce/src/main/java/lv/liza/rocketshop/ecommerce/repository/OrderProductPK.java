@@ -41,6 +41,7 @@ public class OrderProductPK implements Serializable {
 
 
     // hashcode() and equals() methods
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
