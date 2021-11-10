@@ -1,15 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import { Subscription } from 'rxjs';
+import { EcommerceServiceService } from '../ecommerce-service.service';
+import { ProductOrders } from '../models/ProductOrders';
+
 
 @Component({
-  selector: 'app-orders',
-  templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.css']
+    selector: 'app-orders',
+    templateUrl: './orders.component.html',
+    styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
+    orders: ProductOrders;
+    total!: number;
+    paid!: boolean;
+    sub!: Subscription;
 
-  constructor() { }
+    constructor(private ecommerceService: EcommerceServiceService) {
+        this.orders = this.ecommerceService.ProductOrders || {};
+    }
 
-  ngOnInit(): void {
+    ngOnInit() {
+        this.paid = false;
+        this.sub = this.ecommerceService.OrdersChanged.subscribe(() => {
+            this.orders = this.ecommerceService.ProductOrders;
+        });
+        this.loadTotal();
+    }
+
+    pay() {
+        this.paid = true;
+        this.ecommerceService.saveOrder(this.orders).subscribe();
+    }
+
+    loadTotal() {
+        this.sub = this.ecommerceService.TotalChanged.subscribe(() => {
+            this.total = this.ecommerceService.Total;
+        });
+    }
   }
-
-}
