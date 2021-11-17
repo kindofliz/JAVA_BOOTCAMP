@@ -23,5 +23,8 @@ public class Lesson23SQLiteMain {
         } catch (SQLException e) {
             System.out.println("There was a SQL exception " + e);
         }
+
+
+
     }
 }

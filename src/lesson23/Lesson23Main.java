@@ -1,5 +1,6 @@
 package lesson23;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -33,6 +34,19 @@ public class Lesson23Main {
             query = "INSERT INTO spaceships( name, type, active) VALUES ('" + name + "', 'regular', 1)";
 
             statement.execute(query);
+
+
+            //!!!!
+            //INSTEAD OF REGULAR STATEMENT YOU SHOULD ALWAYS USE PreparedStatement
+            String preparedQuery = "INSERT INTO spaceships (type, active, name) VALUES ('regular', 1, ? )";
+            PreparedStatement preparedStatement = db.connection.prepareStatement(preparedQuery);
+
+            preparedStatement.setString(1, name);
+
+            preparedStatement.execute();
+            //!!!!
+
+
 
 
 
