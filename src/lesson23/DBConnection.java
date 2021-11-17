@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DBConnection {
 
-    final String JDBC_CONNECTION = "";
+    final String JDBC_CONNECTION = ""; //unique address for each database type (mysql, sqlite etc. google!)
     final String JDBC_USERNAME = "username";
     final String JDBC_PASSWORD = "qwerty";
     Connection connection = null;
